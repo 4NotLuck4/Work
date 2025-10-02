@@ -10,7 +10,7 @@ namespace LabWork7
         private static string _server = "mssql";
         private static string _datebase = "ispp3102";
         private static string _login = "ispp3102";
-        private static string _password = "3102";
+        private static string _password = "ispp3102";
 
         public static string ConnectionString
         {
