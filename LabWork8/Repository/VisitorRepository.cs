@@ -8,10 +8,10 @@ namespace LabWork8
     {
         private readonly DatabaseContext _dbContext = dbContext;
 
-        public Task<int> AddAsync(Visitor entity)
-            => throw new NotImplementedException();
-        public Task DeleteAsync(int id)
-            => throw new NotImplementedException();
+        //public Task<int> AddAsync(Visitor entity)
+        //    => throw new NotImplementedException();
+        //public Task DeleteAsync(int id)
+        //    => throw new NotImplementedException();
         public Task UpdateAsync(Visitor entity)
 
             => throw new NotImplementedException();
@@ -29,6 +29,24 @@ namespace LabWork8
         {
             using var connection = _dbContext.CreateConnection();
             return await connection.QueryAsync<Visitor>("SELECT * FROM Visitor");
+        }
+        //3.4.1
+        public async Task<int> AddAsync(Visitor entity)
+        {
+            using var connection = _dbContext.CreateConnection();
+            return await connection.ExecuteScalarAsync<int>(
+                @"INSERT INTO Visitor (Name, Email, Phone, RegistrationDate) 
+                  OUTPUT INSERTED.Id 
+                  VALUES (@Name, @Email, @Phone, @RegistrationDate)",
+                entity);
+        }
+        //3.5.1
+        public async Task DeleteAsync(int id)
+        {
+            using var connection = _dbContext.CreateConnection();
+            await connection.ExecuteAsync(
+                "DELETE FROM Visitor WHERE Id = @Id",
+                new { Id = id });
         }
     }
 }

@@ -8,10 +8,10 @@ namespace LabWork8
     {
         private readonly DatabaseContext _dbContext = dbContext;
 
-        public Task<int> AddAsync(Genre entity) 
-            => throw new NotImplementedException();
-        public Task DeleteAsync(int id) 
-            => throw new NotImplementedException();
+        //public Task<int> AddAsync(Genre entity) 
+        //    => throw new NotImplementedException();
+        //public Task DeleteAsync(int id) 
+        //    => throw new NotImplementedException();
         public Task UpdateAsync(Genre entity) 
             => throw new NotImplementedException();
         //3.2.1
@@ -28,6 +28,24 @@ namespace LabWork8
         {
             using var connection = _dbContext.CreateConnection();
             return await connection.QueryAsync<Genre>("SELECT * FROM Genre");
+        }
+        //3.4.1
+        public async Task<int> AddAsync(Genre entity)
+        {
+            using var connection = _dbContext.CreateConnection();
+            return await connection.ExecuteScalarAsync<int>(
+                @"INSERT INTO Genre (Name) 
+                  OUTPUT INSERTED.Id 
+                  VALUES (@Name)",
+                entity);
+        }
+        //3.5.1
+        public async Task DeleteAsync(int id)
+        {
+            using var connection = _dbContext.CreateConnection();
+            await connection.ExecuteAsync(
+                "DELETE FROM Genre WHERE Id = @Id",
+                new { Id = id });
         }
     }
 }
