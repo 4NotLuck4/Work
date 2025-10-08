@@ -12,7 +12,7 @@ namespace LabWork9.Models
     {
         public int VisitorId { get; set; }
         public string Name { get; set; } = null!;
-        public string LastName { get; set; } = null!;
+        public decimal? Birthday { get; set; }
         public string? Phone { get; set; }
         public string? Email { get; set; }
     }
