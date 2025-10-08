@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LabWork9.Models
 {
@@ -13,7 +8,9 @@ namespace LabWork9.Models
         public int TicketId { get; set; }
         public int SessionId { get; set; }
         public int VisitorId { get; set; }
-        public int Row { get; set; }
-        public int Seat { get; set; }
+        public byte Row { get; set; }
+        public byte Seat { get; set; }
+
+        public Visitor? Visitor { get; set; }
     }
 }
