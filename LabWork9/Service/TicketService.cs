@@ -13,8 +13,6 @@ namespace LabWork9.Services
 
         public async Task AddAsync(Ticket entity)
         {
-            _context.Tickets.Add(entity);
-            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
@@ -29,8 +27,6 @@ namespace LabWork9.Services
 
         public async Task UpdateAsync(Ticket entity)
         {
-            _context.Tickets.Update(entity);
-            await _context.SaveChangesAsync();
         }
     }
 }

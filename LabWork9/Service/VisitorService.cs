@@ -12,8 +12,6 @@ namespace LabWork9.Services
             => await _context.Visitors.ToListAsync();
         public async Task AddAsync(Visitor entity)
         {
-            _context.Visitors.Add(entity);
-            await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
@@ -28,8 +26,6 @@ namespace LabWork9.Services
 
         public async Task UpdateAsync(Visitor entity)
         {
-            _context.Visitors.Update(entity);
-            await _context.SaveChangesAsync();
         }
     }
 }
