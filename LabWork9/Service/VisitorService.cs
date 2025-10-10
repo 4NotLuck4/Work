@@ -10,6 +10,7 @@ namespace LabWork9.Services
 
         public async Task<List<Visitor>> GetAsync()
             => await _context.Visitors.ToListAsync();
+
         public async Task AddAsync(Visitor entity)
         {
         }

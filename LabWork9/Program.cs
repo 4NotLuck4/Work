@@ -1,5 +1,4 @@
 ﻿using LabWork9.Contexts;
-using LabWork9.Models;
 using LabWork9.Services;
 
 using var context = new AppDbContext();
@@ -19,6 +18,7 @@ await TestGetTicketsAsync(ticketService);
 // 3.2 получение
 static async Task TestGetVisitorsAsync(VisitorService service)
 {
+    Console.WriteLine();
     Console.WriteLine("--- Получение посетителей ---");
     var visitors = await service.GetAsync();
     Console.WriteLine($"Найдено посетителей: {visitors.Count}");
@@ -32,6 +32,7 @@ static async Task TestGetVisitorsAsync(VisitorService service)
 // 3.2 получение
 static async Task TestGetTicketsAsync(TicketService service)
 {
+    Console.WriteLine();
     Console.WriteLine("--- Получение билетов ---");
     var tickets = await service.GetAsync();
     Console.WriteLine($"Найдено билетов: {tickets.Count}");
@@ -46,6 +47,7 @@ static async Task TestGetTicketsAsync(TicketService service)
 // 3.5 удаление
 static async Task TestDeleteVisitorAsync(VisitorService service)
 {
+    Console.WriteLine();
     Console.WriteLine("--- Удаление посетителя ---");
     var visitors = await service.GetAsync();
 
