@@ -6,7 +6,7 @@ namespace CinemaDbLibrary.Services
 {
     public class GenreService : BaseService<Genre>
     {
-        public GenreService(CinemaDbContext context) : base(context) { }
+        public GenreService(CinemaContext context) : base(context) { }
 
         // 3.1.4 Включение загрузки связанных данных
         public override async Task<Genre?> GetByIdAsync(int id)

@@ -4,9 +4,9 @@ using CinemaDbLibrary.Models;
 
 namespace CinemaDbLibrary.Services
 {
-    public class MovieService : BaseService<Film>
+    public class FilmService : BaseService<Film>
     {
-        public MovieService(CinemaDbContext context) : base(context) { }
+        public FilmService(CinemaContext context) : base(context) { }
 
         // 3.1.4 Включение загрузки связанных данных
         public override async Task<Film?> GetByIdAsync(int id)
@@ -24,7 +24,7 @@ namespace CinemaDbLibrary.Services
                 .Include(m => m.Tickets)
                 .ToListAsync();
         }
-        public async Task<List<Film>> GetMoviesPaginatedAsync(Pagination pagination)
+        public async Task<List<Film>> GetFilmsPaginatedAsync(Pagination pagination)
         {
             return await _dbSet
                 .Include(m => m.Genre)
@@ -34,11 +34,11 @@ namespace CinemaDbLibrary.Services
                 .ToListAsync();
         }
 
-        public async Task<int> GetTotalMoviesCountAsync()
+        public async Task<int> GetTotalFilmsCountAsync()
         {
             return await _dbSet.CountAsync();
         }
-        public async Task<List<Film>> GetMoviesSortedAsync(Sorting sorting, Pagination? pagination = null)
+        public async Task<List<Film>> GetFilmsSortedAsync(Sorting sorting, Pagination? pagination = null)
         {
             var query = _dbSet.Include(m => m.Genre).Include(m => m.Tickets);
 

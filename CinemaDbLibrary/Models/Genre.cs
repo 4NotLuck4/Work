@@ -8,6 +8,6 @@ namespace CinemaDbLibrary.Models
         public int GenreId { get; set; }
         public string Name { get; set; } = null!;
 
-        public ICollection<Movie>? Movies { get; set; }
+        public ICollection<Film>? Films { get; set; }
     }
 }

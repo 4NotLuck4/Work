@@ -6,7 +6,7 @@ namespace CinemaDbLibrary.Services
 {
     public class VisitorService : BaseService<Visitor>
     {
-        public VisitorService(CinemaDbContext context) : base(context) { }
+        public VisitorService(CinemaContext context) : base(context) { }
 
         // 3.1.4 Включение загрузки связанных данных
         public override async Task<Visitor?> GetByIdAsync(int id)

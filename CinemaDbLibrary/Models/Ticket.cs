@@ -1,7 +1,7 @@
 ﻿using CinemaDbLibrary.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LabWork9.Models
+namespace CinemaDbLibrary.Models
 {
     [Table("Ticket")]
     public class Ticket

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LabWork9.Models
+namespace CinemaDbLibrary.Models
 {
     [Table("Visitor")]
     public class Visitor

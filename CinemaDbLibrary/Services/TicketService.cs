@@ -6,7 +6,7 @@ namespace CinemaDbLibrary.Services
 {
     public class TicketService : BaseService<Ticket>
     {
-        public TicketService(CinemaDbContext context) : base(context) { }
+        public TicketService(CinemaContext context) : base(context) { }
 
         // 3.1.4 Включение загрузки связанных данных
         public override async Task<Ticket?> GetByIdAsync(int id)

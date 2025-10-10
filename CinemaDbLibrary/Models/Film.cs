@@ -6,12 +6,10 @@ namespace CinemaDbLibrary.Models
     public class Film
     {
         public int FilmId { get; set; }
-        public string Title { get; set; } = null!;
+        public string Name { get; set; } = null!;
+        public string Title { get; set; }
         public int Duration { get; set; }
-        public int ReleaseYear { get; set; }
-        public int GenreId { get; set; }
-
-        public Genre? Genre { get; set; }
-        public ICollection<Ticket>? Tickets { get; set; }
+        public List<Genre> Genres { get; set; }
+        public DateTime ReleaseDate { get; set; }
     }
 }
