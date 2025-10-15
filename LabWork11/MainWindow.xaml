@@ -6,27 +6,7 @@
         xmlns:local="clr-namespace:LabWork11"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <Grid>
 
-        <TextBlock Grid.Row="0" Text="Список фильмов" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
-
-        <DataGrid x:Name="FilmsDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Extended">
-            <DataGridTextColumn Header="ID" Binding="{Binding FilmId}" Width="50"/>
-            <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="200"/>
-            <DataGridTextColumn Header="Длительность" Binding="{Binding Duration}" Width="80"/>
-            <DataGridTextColumn Header="Год" Binding="{Binding ReleaseDate}" Width="60"/>
-            <DataGridTextColumn Header="Рейтинг" Binding="{Binding AgeRating}" Width="80"/>
-            <DataGridTextColumn Header="Описание" Binding="{Binding Descripton}" Width="*"/>
-        </DataGrid>
-
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
-            <Button x:Name="AddButton" Content="Добавить" Margin="5,0" Padding="10,5" IsEnabled="False"/>
-            <Button x:Name="DeleteButton" Content="Удалить" Click="DeleteButton_Click" Margin="5,0" Padding="10,5"/>
-        </StackPanel>
     </Grid>
 </Window>
