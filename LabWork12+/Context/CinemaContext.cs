@@ -16,7 +16,7 @@ public class CinemaContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Data Source=HOLLOW;Initial Catalog=mssql;User ID=ispp3102;Password=3102;Trust Server Certificate=True");
+        optionsBuilder.UseSqlServer(@"Data Source=mssql;Initial Catalog=ispp3102;User ID=ispp3102;Password=3102;Trust Server Certificate=True");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

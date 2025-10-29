@@ -8,18 +8,18 @@ public class Film
     public int Duration { get; set; }
     public int ReleaseYear { get; set; }
     public string Description { get; set; }
-    
+
     public byte[] Poster { get; set; }
     public string AgeLimit { get; set; }
-    
+
     public System.DateTime? RentalStart { get; set; }
     public System.DateTime? RentalFinish { get; set; }
     public bool isDeleted { get; set; }
-    
-    // РќР°РІРёРіР°С†РёРѕРЅРЅС‹Рµ СЃРІРѕР№СЃС‚РІР°
+
+    // Навигационные свойства
     public virtual ICollection<FilmGenre> FilmGenres { get; set; }
     public virtual ICollection<Session> Sessions { get; set; }
-    
+
     public Film()
     {
         FilmGenres = new HashSet<FilmGenre>();
